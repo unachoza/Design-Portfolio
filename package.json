@@ -13,7 +13,7 @@
   },
   "scripts": {
     "start": " react-scripts start  \"NODE_PATH=./src\"",
-    "sass": "node-sass sass/main.scss css/style.css",
+    "sass": "node-sass sass/main.scss App.css",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject"

@@ -1,6 +1,6 @@
 import React from 'react';
 
-const Nav = () => {
+const NavSlider = () => {
   return (
     <div className="Header__container">
       <header className="Header__header">Header</header>
@@ -8,4 +8,4 @@ const Nav = () => {
   );
 };
 
-export default Nav;
+export default NavSlider;
