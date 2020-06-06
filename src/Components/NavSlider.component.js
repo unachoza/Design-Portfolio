@@ -1,11 +1,29 @@
-import React from 'react';
+import React, { useState } from 'react';
 import 'App.css';
 
-const NavSlider = () => {
+const NavSlider = ({ isNavOpen }) => {
+  console.log(isNavOpen)
+  const [isSliderOpen, setIsSliderOpen] = useState(false);
+
+  const navTrigger = (e) => {
+    e.preventDefault();
+    console.log('doing this', isSliderOpen);
+    setIsSliderOpen(!isSliderOpen);
+  };
+  const toggleSlider = (e) => {
+    e.preventDefault();
+    setIsSliderOpen(!isSliderOpen);
+    console.log(isSliderOpen, 'clicked');
+  };
+  //based on the state of isNavOpen the classes are determined which control is NavSlider is visible
   return (
-    <nav className="cd-nav-container" id="cd-nav">
+    <nav className="cd-nav-container is-visible" id="cd-nav">
       <header>
-        <a href="#0" className="cd-close-nav">
+        <a href="#0" className="cd-close-nav"
+          
+          // onClick={(e) => toggleSlider(e)}
+          
+        >
           Close
         </a>
       </header>
@@ -13,7 +31,6 @@ const NavSlider = () => {
         <li data-menu="index">
           <a href="#home">
             <span>&#xf447;</span>
-
             <em>Return Home</em>
           </a>
         </li>
@@ -59,6 +76,8 @@ const NavSlider = () => {
       </ul>{' '}
       {/* <!-- .cd-3d-nav --> */}
     </nav>
+
+    // <div className="cd-overlay"><!-- shadow layer visible when navigation is visible --></div>
   );
 };
 

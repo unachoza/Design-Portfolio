@@ -3035,9 +3035,9 @@ xnavigation
   width: 50%;
   float: left;
   /* 68px is the navigation header height  and the menu items will be allocated in 3 rows */
-  height: calc((100vh - 68px) / 3);
+  height: calc((80vh - 40px) / 2);
   min-height: 120px;
-  border: 1px solid #ffffff;
+  border: 3px solid green;
   border-top: none;
   border-left: none; }
 
