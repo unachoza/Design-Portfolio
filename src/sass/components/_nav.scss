@@ -1,0 +1,440 @@
+/* #Navigation
+================================================== */
+
+.cbp-af-header {
+  -webkit-transition: all 300ms linear;
+  -moz-transition: all 300ms linear;
+  -o-transition: all 300ms linear;
+  -ms-transition: all 300ms linear;
+  transition: all 300ms linear;
+}
+.cbp-af-header.cbp-af-header-shrink {
+  background: rgba(255, 255, 255, 0.97);
+  -webkit-transition: all 300ms linear;
+  -moz-transition: all 300ms linear;
+  -o-transition: all 300ms linear;
+  -ms-transition: all 300ms linear;
+  transition: all 300ms linear;
+}
+.cbp-af-header.cbp-af-header-shrink img.logo {
+  -webkit-transition: all 300ms linear;
+  -moz-transition: all 300ms linear;
+  -o-transition: all 300ms linear;
+  -ms-transition: all 300ms linear;
+  transition: all 300ms linear;
+}
+
+@media only screen and (min-width: 1024px) {
+  .cd-nav-trigger {
+    top: 30px;
+  }
+  img.logo {
+    top: 40px;
+  }
+  .cbp-af-header.cbp-af-header-shrink img.logo {
+    top: 22px;
+    height: 16px;
+    -webkit-transition: all 300ms linear;
+    -moz-transition: all 300ms linear;
+    -o-transition: all 300ms linear;
+    -ms-transition: all 300ms linear;
+    transition: all 300ms linear;
+  }
+  .cbp-af-header.cbp-af-header-shrink .cd-nav-trigger {
+    top: 8px;
+  }
+  .cbp-af-header.cbp-af-header-shrink.nav-wrapper {
+    height: 60px;
+    -webkit-transition: all 300ms linear;
+    -moz-transition: all 300ms linear;
+    -o-transition: all 300ms linear;
+    -ms-transition: all 300ms linear;
+    transition: all 300ms linear;
+  }
+}
+.nav-wrapper {
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  height: 70px;
+  background: rgba(255, 255, 255, 0.85);
+  z-index: 3;
+  overflow: hidden;
+  box-shadow: 0 0 30px rgba(21, 21, 21, 0.1);
+  -webkit-transition: all 300ms linear;
+  -moz-transition: all 300ms linear;
+  -o-transition: all 300ms linear;
+  -ms-transition: all 300ms linear;
+  transition: all 300ms linear;
+}
+img.logo {
+  position: absolute;
+  top: 24px;
+  left: 5%;
+  z-index: 3;
+  height: 20px;
+  width: auto;
+  display: block;
+  -webkit-transition: all 300ms linear;
+  -moz-transition: all 300ms linear;
+  -o-transition: all 300ms linear;
+  -ms-transition: all 300ms linear;
+  transition: all 300ms linear;
+}
+.cd-nav-trigger {
+  /* hamburger icon */
+  position: absolute;
+  z-index: 3;
+  top: 12px;
+  right: 5%;
+  height: 44px;
+  width: 44px;
+  /* image replacement */
+  overflow: hidden;
+  text-indent: 100%;
+  white-space: nowrap;
+  -webkit-transition: all 300ms linear;
+  -moz-transition: all 300ms linear;
+  -o-transition: all 300ms linear;
+  -ms-transition: all 300ms linear;
+  transition: all 300ms linear;
+}
+.cd-nav-trigger span {
+  /* icon created in CSS */
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  bottom: auto;
+  right: auto;
+  -webkit-transform: translateX(-50%) translateY(-50%);
+  -moz-transform: translateX(-50%) translateY(-50%);
+  -ms-transform: translateX(-50%) translateY(-50%);
+  -o-transform: translateX(-50%) translateY(-50%);
+  transform: translateX(-50%) translateY(-50%);
+  width: 24px;
+  height: 2px;
+  background-color: black;
+}
+.cd-nav-trigger span::before,
+.cd-nav-trigger span:after {
+  /* upper and lower lines of the menu icon */
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  background-color: inherit;
+  /* Force Hardware Acceleration in WebKit */
+  -webkit-transform: translateZ(0);
+  -moz-transform: translateZ(0);
+  -ms-transform: translateZ(0);
+  -o-transform: translateZ(0);
+  transform: translateZ(0);
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  -webkit-transition: -webkit-transform 0.2s, width 0.2s;
+  -moz-transition: -moz-transform 0.2s, width 0.2s;
+  transition: transform 0.2s, width 0.2s;
+}
+.cd-nav-trigger span::before {
+  -webkit-transform-origin: right top;
+  -moz-transform-origin: right top;
+  -ms-transform-origin: right top;
+  -o-transform-origin: right top;
+  transform-origin: right top;
+  -webkit-transform: translateY(-7px);
+  -moz-transform: translateY(-7px);
+  -ms-transform: translateY(-7px);
+  -o-transform: translateY(-7px);
+  transform: translateY(-7px);
+}
+.cd-nav-trigger span::after {
+  -webkit-transform-origin: right bottom;
+  -moz-transform-origin: right bottom;
+  -ms-transform-origin: right bottom;
+  -o-transform-origin: right bottom;
+  transform-origin: right bottom;
+  -webkit-transform: translateY(7px);
+  -moz-transform: translateY(7px);
+  -ms-transform: translateY(7px);
+  -o-transform: translateY(7px);
+  transform: translateY(7px);
+}
+.no-touch .cd-nav-trigger:hover {
+  /* rotate trigger on hover */
+  -webkit-transform: rotate(180deg);
+  -moz-transform: rotate(180deg);
+  -ms-transform: rotate(180deg);
+  -o-transform: rotate(180deg);
+  transform: rotate(180deg);
+}
+.no-touch .cd-nav-trigger:hover span::after,
+.no-touch .cd-nav-trigger:hover span::before {
+  /* animate arrow --> from hamburger to arrow */
+  width: 50%;
+}
+.no-touch .cd-nav-trigger:hover span::before {
+  -webkit-transform: translateX(1px) translateY(1px) rotate(45deg);
+  -moz-transform: translateX(1px) translateY(1px) rotate(45deg);
+  -ms-transform: translateX(1px) translateY(1px) rotate(45deg);
+  -o-transform: translateX(1px) translateY(1px) rotate(45deg);
+  transform: translateX(1px) translateY(1px) rotate(45deg);
+}
+.no-touch .cd-nav-trigger:hover span::after {
+  -webkit-transform: translateX(1px) translateY(-1px) rotate(-45deg);
+  -moz-transform: translateX(1px) translateY(-1px) rotate(-45deg);
+  -ms-transform: translateX(1px) translateY(-1px) rotate(-45deg);
+  -o-transform: translateX(1px) translateY(-1px) rotate(-45deg);
+  transform: translateX(1px) translateY(-1px) rotate(-45deg);
+}
+
+/* -------------------------------- 
+
+xnavigation 
+
+-------------------------------- */
+.cd-nav-container {
+  position: fixed;
+  z-index: 4;
+  top: 0;
+  right: 0;
+  width: 80%;
+  height: 100%;
+  overflow-y: auto;
+  background-color: #ffffff;
+  /* Force Hardware Acceleration in WebKit */
+  -webkit-transform: translateZ(0);
+  -moz-transform: translateZ(0);
+  -ms-transform: translateZ(0);
+  -o-transform: translateZ(0);
+  transform: translateZ(0);
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  -webkit-transform: translateX(100%);
+  -moz-transform: translateX(100%);
+  -ms-transform: translateX(100%);
+  -o-transform: translateX(100%);
+  transform: translateX(100%);
+  -webkit-transition: -webkit-transform 0.4s 0s, box-shadow 0s 0.4s;
+  -moz-transition: -moz-transform 0.4s 0s, box-shadow 0s 0.4s;
+  transition: transform 0.4s 0s, box-shadow 0s 0.4s;
+}
+.cd-nav-container.is-visible {
+  -webkit-transform: translateX(0);
+  -moz-transform: translateX(0);
+  -ms-transform: translateX(0);
+  -o-transform: translateX(0);
+  transform: translateX(0);
+  -webkit-overflow-scrolling: touch;
+  box-shadow: -4px 0 30px rgba(0, 0, 0, 0.2);
+  -webkit-transition: -webkit-transform 0.4s 0s, box-shadow 0s 0s;
+  -moz-transition: -moz-transform 0.4s 0s, box-shadow 0s 0s;
+  transition: transform 0.4s 0s, box-shadow 0s 0s;
+}
+.cd-nav-container header {
+  padding: 1.5em 0 0 6.25%;
+  height: 68px;
+  position: relative;
+}
+
+@media only screen and (min-width: 700px) {
+  .cd-nav-container {
+    width: 70%;
+  }
+  .cd-nav-container header {
+    height: 116px;
+    padding-top: 3em;
+  }
+}
+
+.cd-close-nav {
+  /* 'X' close icon */
+  position: absolute;
+  height: 34px;
+  width: 34px;
+  /* set the right position value so that it overlaps the .cd-nav-trigger*/
+  left: 5%;
+  top: 50%;
+  bottom: auto;
+  -webkit-transform: translateY(-50%);
+  -moz-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  -o-transform: translateY(-50%);
+  transform: translateY(-50%);
+  /* image replacement */
+  overflow: hidden;
+  text-indent: 100%;
+  white-space: nowrap;
+  -webkit-transition: opacity 0.2s;
+  -moz-transition: opacity 0.2s;
+  transition: opacity 0.2s;
+}
+.cd-close-nav::after,
+.cd-close-nav::before {
+  /* lines of 'X' icon */
+  content: '';
+  position: absolute;
+  height: 2px;
+  width: 26px;
+  left: 50%;
+  top: 50%;
+  background-color: #000;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  -webkit-transition: all 300ms linear;
+  -moz-transition: all 300ms linear;
+  -o-transition: all 300ms linear;
+  -ms-transition: all 300ms linear;
+  transition: all 300ms linear;
+}
+.cd-close-nav:hover::after,
+.cd-close-nav:hover::before {
+  background-color: #16a085;
+}
+.cd-close-nav::after {
+  -webkit-transform: translateX(-50%) translateY(-50%) rotate(45deg);
+  -moz-transform: translateX(-50%) translateY(-50%) rotate(45deg);
+  -ms-transform: translateX(-50%) translateY(-50%) rotate(45deg);
+  -o-transform: translateX(-50%) translateY(-50%) rotate(45deg);
+  transform: translateX(-50%) translateY(-50%) rotate(45deg);
+}
+.cd-close-nav::before {
+  -webkit-transform: translateX(-50%) translateY(-50%) rotate(-45deg);
+  -moz-transform: translateX(-50%) translateY(-50%) rotate(-45deg);
+  -ms-transform: translateX(-50%) translateY(-50%) rotate(-45deg);
+  -o-transform: translateX(-50%) translateY(-50%) rotate(-45deg);
+  transform: translateX(-50%) translateY(-50%) rotate(-45deg);
+}
+.no-touch .cd-close-nav:hover {
+  opacity: 0.8;
+}
+@media only screen and (min-width: 700px) {
+  .cd-close-nav {
+    right: 7.14%;
+  }
+}
+
+.cd-nav {
+  background-color: #f2f2f2;
+}
+.cd-nav::after {
+  clear: both;
+  content: '';
+  display: table;
+}
+.cd-nav li {
+  width: 50%;
+  float: left;
+  /* 68px is the navigation header height  and the menu items will be allocated in 3 rows */
+  height: calc((100vh - 68px) / 3);
+  min-height: 120px;
+  border: 1px solid #ffffff;
+  border-top: none;
+  border-left: none;
+}
+.cd-nav li:nth-of-type(2n) {
+  border-right-width: 0;
+}
+.cd-nav a {
+  position: relative;
+  display: block;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  -webkit-transition: background-color 0.2s;
+  -moz-transition: background-color 0.2s;
+  transition: background-color 0.2s;
+}
+.cd-nav li a span {
+  font-family: 'Ionicons';
+  color: #212121;
+  font-size: 50px;
+}
+.cd-nav li a:hover span {
+  color: #16a085;
+}
+.no-touch .cd-nav li a:hover em,
+.cd-nav li.cd-selected a em {
+  /* on hover or if selected - change text and icon color*/
+  color: #16a085;
+}
+.cd-nav li.cd-selected a span {
+  /* on hover or if selected - change text and icon color*/
+  color: #16a085;
+}
+.no-touch .cd-nav li a:hover,
+.cd-nav li.cd-selected a {
+  /* on hover or if selected - change background color*/
+  background-color: #000;
+}
+
+.cd-nav li a.mPS2id-highlight {
+  background-color: #000;
+}
+.cd-nav li a.mPS2id-highlight span,
+.cd-nav li a.mPS2id-highlight em {
+  color: #16a085;
+}
+
+.cd-nav span,
+.cd-nav em {
+  position: absolute;
+}
+.cd-nav span {
+  top: calc(50% - 38px);
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+  -moz-transform: translateX(-50%);
+  -ms-transform: translateX(-50%);
+  -o-transform: translateX(-50%);
+  transform: translateX(-50%);
+  height: 38px;
+  width: 38px;
+}
+.cd-nav span * {
+  -webkit-transition: stroke 0.2s;
+  -moz-transition: stroke 0.2s;
+  transition: stroke 0.2s;
+}
+.cd-nav em {
+  width: 100%;
+  left: 0;
+  top: calc(50% + 15px);
+  color: #000;
+  font-style: normal;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-size: 14px;
+  line-height: 23px;
+  -webkit-transition: color 0.2s;
+  -moz-transition: color 0.2s;
+  transition: color 0.2s;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+@media only screen and (min-width: 700px) {
+  .cd-nav li {
+    /* 116px is the navigation header height and the menu items will be allocated in 3 rows */
+    height: calc((100vh - 116px) / 3);
+    min-height: 200px;
+  }
+}
+@media only screen and (min-width: 1024px) {
+  .cd-nav li {
+    width: 33.33%;
+    float: left;
+    /* 116px is the navigation header height  and the menu items will be allocated in 2 rows */
+    height: calc((100vh - 116px) / 2);
+    min-height: 250px;
+  }
+  .cd-nav li:nth-of-type(2n) {
+    border-right-width: 1px;
+  }
+  .cd-nav li:nth-of-type(3n) {
+    border-right-width: 0;
+  }
+}

@@ -1,10 +1,64 @@
 import React from 'react';
+import 'App.css';
 
 const NavSlider = () => {
   return (
-    <div className="Header__container">
-      <header className="Header__header">Header</header>
-    </div>
+    <nav className="cd-nav-container" id="cd-nav">
+      <header>
+        <a href="#0" className="cd-close-nav">
+          Close
+        </a>
+      </header>
+      <ul className="cd-nav">
+        <li data-menu="index">
+          <a href="#home">
+            <span>&#xf447;</span>
+
+            <em>Return Home</em>
+          </a>
+        </li>
+
+        <li data-menu="projects">
+          <a href="#work">
+            <span>&#xf3ed;</span>
+
+            <em>View Projects</em>
+          </a>
+        </li>
+
+        <li data-menu="about">
+          <a href="#about">
+            <span>&#xf453;</span>
+
+            <em style={{ color: 'green' }}>About Meee</em>
+          </a>
+        </li>
+
+        <li data-menu="services">
+          <a href="#services">
+            <span>&#xf4a7;</span>
+
+            <em>Services</em>
+          </a>
+        </li>
+
+        <li data-menu="blog">
+          <a href="blog.html" className="animsition-link" data-animsition-out="fade-out-right-delay">
+            <span>&#xf3f9;</span>
+
+            <em>Blog Posts</em>
+          </a>
+        </li>
+        <li data-menu="contact">
+          <a href="#contact">
+            <span>&#xf422;</span>
+
+            <em>Contact Me</em>
+          </a>
+        </li>
+      </ul>{' '}
+      {/* <!-- .cd-3d-nav --> */}
+    </nav>
   );
 };
 
