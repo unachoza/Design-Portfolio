@@ -17,3 +17,15 @@ it('expects to render ProjectCard component', () => {
 it('expects to render ProjectCard component', () => {
   expect(shallow(<App />).length).toEqual(1);
 });
+
+test('renders without crashing', () => {
+ const wrapper = shallow(<App />)
+ 
+})
+
+//renders project list with
+//filter projects work with
+//menu slider works
+//menu starts closed when
+//click on project button links to project
+// do hovers work 
