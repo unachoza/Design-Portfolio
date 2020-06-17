@@ -1,0 +1,7 @@
+{
+  "editor.tabCompletion": "onlySnippets",
+  "dsznajder.es7-react-js-snippets.triggerExpansionOnTab": true,
+  "dsznajder.es7-react-js-snippets.showSuggestionsAsSnippets": true,
+  "dsznajder.es7-react-js-snippets.extensionsPath": "",
+  "workbench.colorCustomizations": {}
+}
