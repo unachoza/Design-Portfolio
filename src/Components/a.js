@@ -1,9 +1,18 @@
-import React, { Component } from 'react';
+import React, { Component, fragment, useState } from 'react';
+import MenuSlider from './MenuSlider';
 
 export class AnimatedHeader extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      isVisible: false,
+    };
+  }
+
   componentDidMount() {
     this.cbpAnimatedHeader();
   }
+
   cbpAnimatedHeader = () => {
     let docElem = document.documentElement,
       header = document.querySelector('.cbp-af-header'),
@@ -11,7 +20,7 @@ export class AnimatedHeader extends Component {
       changeHeaderOn = 300;
 
     const init = () => {
-      this.scrollPage();
+      scrollPage();
       window.addEventListener(
         'scroll',
         (event) => {
@@ -40,9 +49,32 @@ export class AnimatedHeader extends Component {
 
     init();
   };
+  fireTrigger = (e) => {
+    this.setState((prevState) => ({ isVisible: !prevState.isVisible }));
+    console.log(this.state, 'was clicked', e);
+  };
 
   render() {
-    return <div></div>;
+    const { isVisible } = this.state;
+    return (
+      <React.Fragment>
+        <div className="nav-wrapper cbp-af-header">
+          <div className="nav-wrapper cbp-af-header">
+            <a href="http://ariannaupdate.surge.sh/index.html">
+              <img className="logo" src="./images/logos/Logo_Abstract.png" alt="" />
+            </a>
+
+            <a href="#cd-nav" className="cd-nav-trigger" onClick={(e) => this.fireTrigger(e)}>
+              Menu<span></span> {/* // used to create the menu icon *} */}
+            </a>
+            {/* <!-- .cd-nav-trigger --> */}
+          </div>
+        </div>
+        <div className={isVisible ? 'cd-nav-container is-visible' : 'cd-nav-container'}>
+          <MenuSlider isVisible={isVisible} fire={this.fireTrigger} />
+        </div>
+      </React.Fragment>
+    );
   }
 }
 
